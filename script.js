@@ -181,7 +181,7 @@ function triggerSectionSpecialAnimations(index) {
 }
 
 // --- Typewriter Effect ---
-const phrases = ["FULL-STACK ARCHITECT", "INTERFACE DESIGNER", "PROBLEM SOLVER", "SYSTEM ENGINEER"];
+const phrases = ["FULL-STACK ARCHITECT", "INTERFACE DESIGNER", "PROBLEM SOLVER"];
 let phraseIdx = 0;
 let charIdx = 0;
 let isDeleting = false;
