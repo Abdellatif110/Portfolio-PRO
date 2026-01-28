@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdellatif Ighil | Portfolio Pro</title>
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-text">INITIALIZING SYSTEMS</div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle" class="btn btn-link text-white position-fixed"
+        style="top: 20px; right: 20px; z-index: 1001; font-size: 1.5rem;">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Side Navigation Dots -->
+    <nav class="side-navigation">
+        <div class="nav-dot active" data-section="0">
+            <span class="dot-tooltip">Home</span>
+        </div>
+        <div class="nav-dot" data-section="1">
+            <span class="dot-tooltip">Profile</span>
+        </div>
+        <div class="nav-dot" data-section="2">
+            <span class="dot-tooltip">Skills</span>
+        </div>
+        <div class="nav-dot" data-section="3">
+            <span class="dot-tooltip">Projects</span>
+        </div>
+        <div class="nav-dot" data-section="4">
+            <span class="dot-tooltip">Timeline</span>
+        </div>
+        <div class="nav-dot" data-section="5">
+            <span class="dot-tooltip">Contact</span>
+        </div>
+    </nav>
+
+    <!-- Section Counter -->
+    <div class="section-counter">
+        <span class="current-section">01</span>
+        <div class="section-divider"></div>
+        <span class="total-sections">06</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="fullpage-container">
+
+        <!-- SECTION 1: HERO -->
+        <section class="fullpage-section active" data-section="0">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div class="hero-content">
+                    <div class="hero-label">FRONT-END & BACK-END DEVELOPER</div>
+                    <h1 class="hero-title">
+                        <span class="title-line"><span>ABDELLATIF</span></span>
+                        <span class="title-line"><span>IGHIL</span></span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-description">Crafting the future of web experiences with a cinematic touch and
+                        technical mastery.</p>
+                    <a href="#" class="cta-button" data-scroll-to="3">
+                        <span>Initiate Sequence</span>
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="scroll-text">Command Scroll</div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT ME -->
+        <section class="fullpage-section" data-section="1">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <div class="about-image-wrapper">
+                            <div class="profile-frame">
+                                <div class="frame-corner corner-tl"></div>
+                                <div class="frame-corner corner-tr"></div>
+                                <div class="frame-corner corner-bl"></div>
+                                <div class="frame-corner corner-br"></div>
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user-astronaut"></i>
+                                </div>
+                            </div>
+                            <div class="floating-tech">
+                                <i class="fab fa-react"></i>
+                                <i class="fab fa-js"></i>
+                                <i class="fab fa-python"></i>
+                                <i class="fab fa-laravel"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="about-content">
+                            <span class="section-label">ABOUT ME</span>
+                            <h2 class="section-title">PERSONAL PROFILE</h2>
+                            <div class="about-text mb-4">
+                                <p class="lead text-white opacity-75">Full-Stack Web Developer passionate about creating
+                                    and optimizing modern web applications.</p>
+                                <p>Currently expanding my horizons at Marrakech Ynov Campus, I specialize in building
+                                    responsive, high-performance interfaces and robust back-end systems.</p>
+                                <p>Driven by curiosity and a calm focus, I tackle technical challenges with analytical
+                                    precision.</p>
+                            </div>
+                            <div class="quick-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">07+</div>
+                                    <div class="stat-label">Months</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">06+</div>
+                                    <div class="stat-label">Projects</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10+</div>
+                                    <div class="stat-label">Stack</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center gap-3">
+                                <a href="Cv-Pro-abdellatif.pdf" download class="cta-button">
+                                    <span>Download Source Card</span>
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SKILLS -->
+        <section class="fullpage-section" data-section="2">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="section-label">EXPERTISE</span>
+                    <h2 class="section-title">TECHNICAL SKILLS</h2>
+                </div>
+                <div class="skills-grid">
+                    <!-- FRONT-END -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-terminal"></i>
+                            <h3>FRONT-END</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">HTML / CSS</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">BOOTSTRAP</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">JS</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">REACT JS</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">TYPESCRIPT</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BACK-END -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>BACK-END</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">PHP</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">LARAVEL</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">NODE JS / EXPRESS</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">PYTHON</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECURITY -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>SECURITY</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">HELMET</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">RATE LIMITING</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">JWT</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">BCRYPTJS</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VALIDATION -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-check-double"></i>
+                            <h3>VALIDATION</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">JOI</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">EXPRESS VALIDATOR</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DATABASE -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-database"></i>
+                            <h3>DATABASE</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">MYSQL / POSTGRES</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">MONGODB / SUPABASE</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEVOPS/OTHER -->
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>DEVOPS/OTHER</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">GIT / GITHUB</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">REST API / GRAPHQL</div>
+                                <div class="skill-level">
+                                    <div class="level-bar" style="--width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROJECTS -->
+        <section class="fullpage-section" data-section="3">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="section-label">MY WORK</span>
+                    <h2 class="section-title">PROJECT PORTFOLIO</h2>
+                    <p class="section-subtitle text-white opacity-75">Real-world projects showcasing technical expertise
+                    </p>
+                </div>
+
+                <!-- Projects Cards Container with 3-column layout -->
+                <div class="projects-container">
+                    <div class="projects-grid" id="projectsGrid">
+                        <!-- Project 1: Gestion des Études -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Gestion-des-etudes" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">React + TypeScript</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-graduation-cap"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Gestion des Études</h3>
+                                <p>Student management system built with React JS + TypeScript. Comprehensive solution
+                                    for academic institution administration.</p>
+                                <div class="project-tags">
+                                    <span>React</span><span>TypeScript</span><span>Modern UI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Book Store -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Book-Store" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Full-Stack</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-book"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Modern Book Store</h3>
+                                <p>Full-featured bookstore with Node.js backend and modern frontend. Features inventory
+                                    management, user authentication, and sales tracking.</p>
+                                <div class="project-tags">
+                                    <span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Animals CRUD -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Animals-CRUD" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Node.js + MySQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-paw"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Animals CRUD System</h3>
+                                <p>Complete animal management system with Create, Read, Update, Delete operations. Built
+                                    with Node.js, Express, and MySQL database.</p>
+                                <div class="project-tags">
+                                    <span>Node.js</span><span>Express</span><span>MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Extract Extension -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Extract-Extension" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Browser Extension</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-puzzle-piece"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Extract Extension</h3>
+                                <p>Browser extension for data extraction and content management. Built with HTML, CSS,
+                                    and JavaScript.</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: Birth Certificate System -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Syst-me-de-gestion-des-certificats-de-naissance"
+                                            target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Web Application</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-certificate"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Birth Certificate Management</h3>
+                                <p>Administrative system for managing birth certificates with secure access and document
+                                    tracking.</p>
+                                <div class="project-tags">
+                                    <span>Full-Stack</span><span>Web App</span><span>Management</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6: Portfolio -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Portfolio" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Portfolio</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-briefcase"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Developer Portfolio</h3>
+                                <p>Modern, responsive portfolio showcasing web development projects and skills with
+                                    cinematic design.</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 7: E-commerce -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/E-commerce" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">E-commerce</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-shopping-cart"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>E-commerce Platform</h3>
+                                <p>Complete online shopping platform with product catalog, cart system, and checkout
+                                    process.</p>
+                                <div class="project-tags">
+                                    <span>Web App</span><span>E-commerce</span><span>Responsive</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 8: Portfolio Personnel -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Portfolio_Personnel" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Personal Portfolio</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-user-tie"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Personal Portfolio</h3>
+                                <p>Personal branding portfolio showcasing professional experience and project
+                                    highlights.</p>
+                                <div class="project-tags">
+                                    <span>Portfolio</span><span>Personal</span><span>Branding</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 9: Weather App -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/project_Weather" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Weather Application</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-cloud-sun"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Weather Application</h3>
+                                <p>Real-time weather application with location detection and detailed forecasts.</p>
+                                <div class="project-tags">
+                                    <span>API</span><span>Weather</span><span>Real-time</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 10: Shopping Project -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/Abdellatif110/Project_shopping" target="_blank"
+                                            class="project-link"><i class="fab fa-github"></i></a>
+                                        <span class="project-tech">Shopping System</span>
+                                    </div>
+                                </div>
+                                <div class="project-thumb"><i class="fas fa-store"></i></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Shopping System</h3>
+                                <p>Complete shopping management system with product browsing and purchase functionality.
+                                </p>
+                                <div class="project-tags">
+                                    <span>Shopping</span><span>Management</span><span>System</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="pagination-controls">
+                    <button class="pagination-btn prev-btn" onclick="prevPage()">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Previous</span>
+                    </button>
+
+                    <div class="page-indicators">
+                        <!-- Page indicators will be generated by JavaScript -->
+                    </div>
+
+                    <button class="pagination-btn next-btn" onclick="nextPage()">
+                        <span>Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Project Count -->
+                <div class="project-count text-center mt-4">
+                    <span class="count-text">Showing <span id="currentRange">1-3</span> of <span
+                            id="totalProjects">10</span> projects</span>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 5: EXPERIENCE -->
+        <section class="fullpage-section" data-section="4">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="text-center mb-5">
+                    <span class="section-label">CAREER PATH</span>
+                    <h2 class="section-title">PROFESSIONAL TIMELINE</h2>
+                </div>
+                <div class="journey-grid">
+                    <!-- Education 2 (2020) -->
+                    <div class="journey-card">
+                        <div class="journey-card-header">
+                            <div class="card-badge"><i class="fas fa-graduation-cap"></i></div>
+                        </div>
+                        <div class="journey-icon-wrapper">
+                            <div class="journey-icon"><i class="fas fa-atom"></i></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="journey-role">Baccalaureate</h3>
+                            <span class="journey-company">EXPERIMENTAL SCIENCES</span>
+                            <p class="journey-desc">Rigorous secondary education focused on physics and experimental
+                                scientific methodologies.</p>
+                            <div class="journey-footer">
+                                <span class="journey-date-pill">2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education 1 (2021-2023) -->
+                    <div class="journey-card">
+                        <div class="journey-card-header">
+                            <div class="card-badge"><i class="fas fa-graduation-cap"></i></div>
+                        </div>
+                        <div class="journey-icon-wrapper">
+                            <div class="journey-icon"><i class="fas fa-user-graduate"></i></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="journey-role">Specialized Technician</h3>
+                            <span class="journey-company">OFPPT - DIGITAL DEVELOPMENT</span>
+                            <p class="journey-desc">Comprehensive training in full-stack development, software
+                                architecture, and modern web technologies.</p>
+                            <div class="journey-footer">
+                                <span class="journey-date-pill">2021 - 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 (2023) -->
+                    <div class="journey-card">
+                        <div class="journey-card-header">
+                            <div class="card-badge"><i class="fas fa-briefcase"></i></div>
+                        </div>
+                        <div class="journey-icon-wrapper">
+                            <div class="journey-icon"><i class="fas fa-laptop-code"></i></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="journey-role">Digital Developer Intern</h3>
+                            <span class="journey-company">AREF - TANGER-TETOUAN</span>
+                            <p class="journey-desc">Developed a birth license management web application with automatic
+                                decision editing.</p>
+                            <div class="journey-footer">
+                                <span class="journey-date-pill">MAY 2023 - JUN 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 1 (2024) -->
+                    <div class="journey-card">
+                        <div class="journey-card-header">
+                            <div class="card-badge"><i class="fas fa-briefcase"></i></div>
+                        </div>
+                        <div class="journey-icon-wrapper">
+                            <div class="journey-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="journey-role">Web Support Agent</h3>
+                            <span class="journey-company">OPERATING MEDIA S.A.R.L</span>
+                            <p class="journey-desc">Executed email marketing strategies and customized HTML/CSS product
+                                promotion sites throughout the internship.</p>
+                            <div class="journey-footer">
+                                <span class="journey-date-pill">JAN 2024 - AUG 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NEW Experience (2025-2026) -->
+                    <div class="journey-card">
+                        <div class="journey-card-header">
+                            <div class="card-badge"><i class="fas fa-rocket"></i></div>
+                        </div>
+                        <div class="journey-icon-wrapper">
+                            <div class="journey-icon"><i class="fas fa-layer-group"></i></div>
+                        </div>
+                        <div class="journey-content">
+                            <h3 class="journey-role">Formation Full Stack</h3>
+                            <span class="journey-company">JOBINTECH + YONV MAROC</span>
+                            <p class="journey-desc">Advanced Full Stack training program mastering MERN stack, advanced
+                                architecture, and real-world project deployment.</p>
+                            <div class="journey-footer">
+                                <span class="journey-date-pill">NOV 2025 - FEB 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Journey Pagination Controls -->
+                <div class="pagination-controls text-center mt-5">
+                    <button class="nav-btn prev-btn journey-prev" disabled>
+                        <i class="fas fa-chevron-left"></i> PREVIOUS
+                    </button>
+                    <div class="page-indicators journey-indicators">
+                        <!-- Indicators will be generated by JS -->
+                    </div>
+                    <button class="nav-btn next-btn journey-next">
+                        NEXT <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CONTACT -->
+        <section class="fullpage-section" data-section="5">
+            <div class="animated-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="contact-info">
+                            <span class="section-label">CONTACT</span>
+                            <h2 class="section-title">GET IN TOUCH</h2>
+                            <p class="contact-description">Ready for the next mission. Send a signal to start
+                                collaboration.</p>
+
+                            <div class="contact-methods">
+                                <a href="mailto:ighil.abdellatif1@gmail.com" class="contact-method">
+                                    <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                                    <div class="method-details">
+                                        <div class="method-label">Direct Email</div>
+                                        <div class="method-value">ighil.abdellatif1@gmail.com</div>
+                                    </div>
+                                </a>
+                                <div class="contact-method">
+                                    <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="method-details">
+                                        <div class="method-label">Current Location</div>
+                                        <div class="method-value">Marrakech, Morocco</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="https://github.com/Abdellatif110" target="_blank" class="social-link"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/abdellatif-ighil-236565282" target="_blank"
+                                    class="social-link"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" id="contactForm">
+                                <!-- Hidden Subject Field for Email Template -->
+                                <input type="hidden" name="subject" value="New Inquiry from Portfolio">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-input" id="name" name="from_name" required>
+                                    <label for="name" class="form-label">FULL NAME</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-input" id="email" name="reply_to" required>
+                                    <label for="email" class="form-label">EMAIL ADDRESS</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-input" id="message" name="message" rows="4"
+                                        required></textarea>
+                                    <label for="message" class="form-label">YOUR MESSAGE</label>
+                                    <div class="form-line"></div>
+                                </div>
+                                <button type="submit" class="submit-button">
+                                    <span>SEND MESSAGE</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-text position-absolute bottom-0 start-50 translate-middle-x pb-3 opacity-50">
+                <p>&copy; 2026 Abdellatif Ighil. Systems Active.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // PLEASE REPLACE "YOUR_PUBLIC_KEY" WITH YOUR ACTUAL EMAILJS PUBLIC KEY
+            emailjs.init({
+                publicKey: "OGJUUpp517F4OSUSC",
+            });
+        })();
+    </script>
+
+    <!-- Project Assets -->
+    <script src="script.js"></script>
+</body>
+
+</html>
