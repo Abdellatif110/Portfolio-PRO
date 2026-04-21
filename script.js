@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupKeyboardNavigation();
     setupCTAButtons();
     handleFormSubmit();
-    setupInputFilledState();
     initProjectsPagination();
 
     // Dark Mode Toggle
@@ -353,57 +352,69 @@ function setupCTAButtons() {
     });
 }
 
-// --- Form & Input Logic ---
-function setupInputFilledState() {
-    document.querySelectorAll('.form-input').forEach(input => {
-        input.addEventListener('blur', () => {
-            input.setAttribute('data-filled', input.value.trim() !== '' ? 'true' : 'false');
-        });
-        input.addEventListener('input', () => {
-            input.setAttribute('data-filled', input.value.trim() !== '' ? 'true' : 'false');
-        });
-    });
-}
-
+// --- Form Logic ---
 function handleFormSubmit() {
     const form = document.getElementById('contactForm');
-    if (!form) return;
+    const status = document.getElementById('formStatus');
+    if (!form || !status) return;
+
+    // Optional: Re-initialize to ensure it's set with correct key
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("OGJUUpp517F4OSUSC");
+    }
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = form.querySelector('.submit-button');
         const originalText = btn.innerHTML;
 
-        // Visual Feedback - Sending
-        btn.innerHTML = '<span>TRANSMITTING...</span> <i class="fas fa-spinner fa-spin"></i>';
+        // Visual Feedback
+        btn.disabled = true;
+        const transmittingText = '<span>TRANSMITTING...</span> <i class="fas fa-spinner fa-spin"></i>';
+        btn.innerHTML = transmittingText;
+        status.textContent = 'Contacting server...';
+        status.classList.remove('text-success', 'text-danger');
+        status.style.color = 'var(--text-secondary)';
 
-        // EmailJS Send
-        // REPLACE "YOUR_SERVICE_ID" and "YOUR_TEMPLATE_ID" with your actual IDs
-        emailjs.sendForm('service_fqjp7qz', 'template_n90bkjs', '#contactForm')
+        // EmailJS sendForm
+        // service_o2rxovv, template_n90bkjs, form
+        emailjs.sendForm('service_o2rxovv', 'template_n90bkjs', form)
             .then(() => {
-                // Success
-                btn.innerHTML = '<span>DATA TRANSMITTED</span> <i class="fas fa-check"></i>';
+                console.log('SUCCESS!');
+                btn.innerHTML = '<span>TRANSMITTED</span> <i class="fas fa-check"></i>';
                 btn.style.background = '#00ff88';
-                btn.style.color = '#000';
+                status.textContent = 'Message sent successfully. I will get back to you soon.';
+                status.style.color = '#00ff88';
+                form.reset();
 
                 setTimeout(() => {
-                    form.reset();
-                    document.querySelectorAll('.form-input').forEach(i => i.setAttribute('data-filled', 'false'));
+                    btn.disabled = false;
                     btn.innerHTML = originalText;
                     btn.style.background = '';
-                    btn.style.color = '';
-                }, 3000);
+                    status.textContent = '';
+                }, 5000);
             }, (error) => {
-                // Error
                 console.error('FAILED...', error);
-                btn.innerHTML = '<span>TRANSMISSION FAILED</span> <i class="fas fa-times"></i>';
+                btn.disabled = false;
+                btn.innerHTML = '<span>FAILED</span> <i class="fas fa-times"></i>';
                 btn.style.background = '#ff0055';
+                
+                let errorMsg = 'Transmission failed. Please try again later.';
+                
+                // Specific check for Gmail connection issues
+                if (error.text && error.text.includes('Invalid grant')) {
+                    errorMsg = 'System Error: Gmail connection expired. Please reconnect your account in the EmailJS dashboard.';
+                } else if (error.text) {
+                    errorMsg = `Error: ${error.text}`;
+                }
+                
+                status.textContent = errorMsg;
+                status.style.color = '#ff0055';
 
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.background = '';
-                    btn.style.color = '';
-                }, 3000);
+                }, 8000);
             });
     });
 }

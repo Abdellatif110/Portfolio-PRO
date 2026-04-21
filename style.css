@@ -562,7 +562,7 @@ a {
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    background: var(--glass-bg);
+    background: radial-gradient(circle at center, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     overflow: hidden;
@@ -570,6 +570,32 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    animation: frame-float 6s ease-in-out infinite;
+    box-shadow: inset 0 0 50px rgba(0, 243, 255, 0.05);
+}
+
+.profile-frame::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 243, 255, 0.2), transparent);
+    animation: scan-line 4s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes frame-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes scan-line {
+    0% { top: -50%; }
+    100% { top: 150%; }
 }
 
 .frame-corner {
@@ -608,20 +634,29 @@ a {
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
     object-fit: cover;
-    border: 3px solid var(--neon-cyan);
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
-    animation: hologram-flicker 4s infinite;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.3);
+    animation: hologram-flicker 4s infinite, avatar-pulse 3s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-avatar {
     font-size: 8rem;
     color: var(--neon-cyan);
     filter: drop-shadow(0 0 20px var(--neon-cyan));
-    animation: hologram-flicker 4s infinite;
+    animation: hologram-flicker 4s infinite, avatar-pulse 3s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes avatar-pulse {
+    from { transform: scale(1); filter: drop-shadow(0 0 20px var(--neon-cyan)); }
+    to { transform: scale(1.05); filter: drop-shadow(0 0 35px var(--neon-cyan)); }
 }
 
 @keyframes hologram-flicker {
@@ -689,14 +724,18 @@ a {
 }
 
 @keyframes float-icon {
-    from {
-        transform: translateY(0) rotate(0deg);
+    0% {
+        transform: translate(0, 0) rotate(0deg);
         opacity: 0.3;
     }
-
-    to {
-        transform: translateY(20px) rotate(15deg);
-        opacity: 0.6;
+    50% {
+        transform: translate(15px, -15px) rotate(10deg);
+        opacity: 0.7;
+        box-shadow: 0 0 15px var(--neon-cyan);
+    }
+    100% {
+        transform: translate(-5px, 10px) rotate(-5deg);
+        opacity: 0.3;
     }
 }
 
@@ -1098,95 +1137,106 @@ a {
 
 /* --- Contact Section --- */
 .contact-info {
-    padding-right: 50px;
+    padding-right: 30px;
 }
 
 .contact-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 40px;
+    line-height: 1.6;
 }
 
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 50px;
+/* Small Contact Icons */
+.contact-icons-grid-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-.contact-method {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.contact-icon-card-small {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 20px;
-    transition: 0.3s;
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
-.contact-method:hover {
+.contact-icon-card-small:hover {
     border-color: var(--neon-cyan);
-    transform: translateX(10px);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.1);
 }
 
-.method-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 243, 255, 0.1);
-    color: var(--neon-cyan);
+.card-icon-small {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    border-radius: 8px;
-}
-
-.method-label {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-}
-
-.method-value {
-    font-size: 1.1rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-link {
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--glass-border);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    transition: 0.3s;
-    border-radius: 8px;
-}
-
-.social-link:hover {
-    border-color: var(--neon-cyan);
     color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
 }
 
+.card-info-small {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-info-small span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.card-info-small strong {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Contact Form Restoration */
 .contact-form-wrapper {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 50px;
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .form-group {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .form-input {
@@ -1199,6 +1249,7 @@ a {
     font-family: var(--font-body);
     font-size: 1.1rem;
     outline: none;
+    transition: 0.3s;
 }
 
 .form-label {
@@ -1206,15 +1257,16 @@ a {
     top: 10px;
     left: 0;
     pointer-events: none;
-    transition: var(--transition-mid);
+    transition: 0.3s;
     color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .form-input:focus~.form-label,
-.form-input:valid~.form-label,
-.form-input[data-filled="true"]~.form-label {
+.form-input:valid~.form-label {
     top: -20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--neon-cyan);
 }
 
@@ -1225,7 +1277,8 @@ a {
     width: 0;
     height: 1px;
     background: var(--neon-cyan);
-    transition: 0.5s;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px var(--neon-cyan);
 }
 
 .form-input:focus~.form-line {
@@ -1234,24 +1287,43 @@ a {
 
 .submit-button {
     width: 100%;
-    padding: 18px;
+    padding: 16px;
     background: var(--neon-cyan);
     border: none;
     color: var(--bg-dark);
     font-family: var(--font-heading);
     font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     transition: 0.3s;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .submit-button:hover {
     box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
     transform: translateY(-2px);
+    background: #fff;
+}
+
+#formStatus {
+    font-size: 0.9rem;
+    min-height: 1.5em;
+    font-family: var(--font-subheading);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-icons-grid-small {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Footer --- */
