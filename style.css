@@ -29,13 +29,13 @@
 
 /* Light Mode Overrides */
 body.light-mode {
-    --bg-dark: #f0f2f5;
-    --bg-navy: #e0e5ec;
-    --glass-bg: rgba(0, 0, 0, 0.03);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --text-primary: #1a1a1a;
-    --text-secondary: #5a5a7a;
-    --accent-glow: rgba(0, 106, 255, 0.2);
+    --bg-dark: #f8fafc;
+    --bg-navy: #f1f5f9;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-glow: rgba(0, 106, 255, 0.1);
 }
 
 /* --- Base Reset --- */
@@ -221,6 +221,12 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.6;
+    transition: opacity 0.5s ease;
+}
+
+body.light-mode .animated-bg {
+    opacity: 0.1;
+    filter: grayscale(100%) brightness(1.5);
 }
 
 .grid-overlay {
