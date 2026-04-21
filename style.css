@@ -216,6 +216,11 @@ a {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    background-image: url('cinematic-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
 }
 
 .grid-overlay {
@@ -633,11 +638,14 @@ a {
     border-top: 0;
 }
 
-.profile-photo {
-    width: 280px;
-    height: 280px;
+.profile-photo-bg {
+    width: 320px;
+    height: 320px;
+    background-image: url('photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 15px;
-    object-fit: cover;
     border: 2px solid var(--neon-cyan);
     box-shadow: 0 0 40px rgba(0, 243, 255, 0.3);
     animation: hologram-flicker 4s infinite, avatar-pulse 3s ease-in-out infinite alternate;
@@ -768,15 +776,18 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-category {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    padding: 30px;
+    padding: 20px;
     backdrop-filter: blur(10px);
     transition: 0.3s;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 .skill-category:hover {
@@ -805,7 +816,7 @@ a {
 .skill-items {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
 }
 
 .skill-name {
