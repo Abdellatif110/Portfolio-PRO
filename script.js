@@ -28,15 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         startTypewriter();
     }, 2000);
 
-    // Setup Systems
+    // --- Setup Systems ---
     setupScrollEngine();
     setupDotNavigation();
     setupKeyboardNavigation();
     setupCTAButtons();
     handleFormSubmit();
-    initProjectsPagination();
 
-    // Dark Mode Toggle
+    // Theme Toggle Initialization
     const darkModeBtn = document.getElementById('darkModeToggle');
     if (darkModeBtn) {
         darkModeBtn.addEventListener('click', toggleDarkMode);
@@ -298,9 +297,12 @@ function updateProjectCount() {
 }
 
 function updatePaginationButtons() {
+    const projectsSection = document.querySelector('.fullpage-section[data-section="4"]');
+    if (!projectsSection) return;
+
     const totalPages = Math.ceil(totalProjects / projectsPerPage);
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = projectsSection.querySelector('.prev-btn');
+    const nextBtn = projectsSection.querySelector('.next-btn');
 
     if (prevBtn) {
         prevBtn.disabled = currentPage === 0;
@@ -358,9 +360,9 @@ function handleFormSubmit() {
     const status = document.getElementById('formStatus');
     if (!form || !status) return;
 
-    // Optional: Re-initialize to ensure it's set with correct key
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init("OGJUUpp517F4OSUSC");
+    // Check if EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+        console.warn('System: EmailJS SDK not detected. Form transmission may be offline.');
     }
 
     form.addEventListener('submit', (e) => {
@@ -368,11 +370,30 @@ function handleFormSubmit() {
         const btn = form.querySelector('.submit-button');
         const originalText = btn.innerHTML;
 
+        // Manual Validation
+        const nameInput = form.querySelector('#name');
+        const emailInput = form.querySelector('#email');
+        const messageInput = form.querySelector('#message');
+
+        if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+            status.textContent = 'Please fill in all required fields.';
+            status.style.color = '#ff0055';
+            return;
+        }
+
+        // Email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            status.textContent = 'Please enter a valid email address.';
+            status.style.color = '#ff0055';
+            return;
+        }
+
         // Visual Feedback
         btn.disabled = true;
         const transmittingText = '<span>TRANSMITTING...</span> <i class="fas fa-spinner fa-spin"></i>';
         btn.innerHTML = transmittingText;
-        status.textContent = 'Contacting server...';
+        status.textContent = 'Initiating link...';
         status.classList.remove('text-success', 'text-danger');
         status.style.color = 'var(--text-secondary)';
 
@@ -398,16 +419,16 @@ function handleFormSubmit() {
                 btn.disabled = false;
                 btn.innerHTML = '<span>FAILED</span> <i class="fas fa-times"></i>';
                 btn.style.background = '#ff0055';
-                
+
                 let errorMsg = 'Transmission failed. Please try again later.';
-                
+
                 // Specific check for Gmail connection issues
                 if (error.text && error.text.includes('Invalid grant')) {
                     errorMsg = 'System Error: Gmail connection expired. Please reconnect your account in the EmailJS dashboard.';
                 } else if (error.text) {
                     errorMsg = `Error: ${error.text}`;
                 }
-                
+
                 status.textContent = errorMsg;
                 status.style.color = '#ff0055';
 
